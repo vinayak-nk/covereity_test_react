@@ -1,4 +1,19 @@
 import { useState } from 'react'
+
+const test_switch_break = (counter) => {
+  console.log(counter)
+  let text = '--'
+  switch (counter) {
+    default: text = '======'
+    case counter < 10: text = 'less than 10'
+    case counter == 10: text = 'equal to 10'
+    case counter > 10: text = 'greater than 10'
+  }
+
+  return text
+}
+
+
 function App() {
   const [counter, updateCounter] = useState(0)
   return (
@@ -12,12 +27,14 @@ function App() {
       >
         Update Count
       </div>
-
       <div
         style={{ padding: '10px', width: '20px', border: '2px solid orange', backgroundColor: 'skyblue', borderRadius: '6px', color: '#000' }}
       >
         {counter}
       </div>
+      <span style={{ marginLeft: '20px', color: 'red' }}>
+        {test_switch_break(counter)}
+      </span>
     </div>
   );
 }
