@@ -3,11 +3,15 @@ import { useState } from 'react'
 const test_switch_break = (counter) => {
   console.log(counter)
   let text = '--'
+  const a = 10
   switch (counter) {
     default: text = '======'
     case counter < 10: text = 'less than 10'
     case counter == 10: text = 'equal to 10'
-    case counter > 10: text = 'greater than 10'
+    case counter > 10: {
+      text = 'greater than 10'
+      a = 20
+    }
   }
 
   return text
